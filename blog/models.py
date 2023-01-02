@@ -7,7 +7,7 @@ class Category(models.Model):
         return self.name
 
 class Blog(models.Model):
-    title=models.CharField(max_length=100, unique=True)
+    title=models.CharField(max_length=100)
     content=models.TextField(blank=True)
     category=models.ForeignKey(Category,on_delete=models.PROTECT)
     is_published=models.BooleanField(default=False)
